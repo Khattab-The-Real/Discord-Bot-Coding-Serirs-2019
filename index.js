@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const botconfig = require('./botconfig.json');
+const tokenfile = require('./tokenfile.json');
 const bot = new Discord.Client({disableEveryone: true});
 
 bot.on('ready', async () => {
@@ -8,5 +9,20 @@ bot.on('ready', async () => {
 });
 
 
+bot.on("message", async message => {
+    if(message.author.bot) return;
+    if(message.channel.type === "dm") return message.reply('Nothing works here :)');
 
-bot.login(botconfig.token);
+    let prefix = botconfig.prefix;
+    let messageArray = message.content.split(" ");
+    let command = messageArray[0];
+    let args = messageArray.slice(1);
+
+
+    
+});
+
+
+bot.login(tokenfile.token);
+
+
