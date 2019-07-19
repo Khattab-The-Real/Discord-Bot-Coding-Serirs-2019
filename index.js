@@ -18,7 +18,10 @@ bot.on("message", async message => {
     let command = messageArray[0];
     let args = messageArray.slice(1);
 
-
+    
+    if(command === `${prefix}test`){
+     message.channel.send("This test command is working perfectly!")   
+    };
     
 });
 
