@@ -35,7 +35,7 @@ bot.on("message", async message =>{
     .addField("Kicked User:", `${kUser} With ID: ${kUser.id}`)
     .addField("Kicked By", `<@${message.author.username}> With ID: ${message.author.id}`)
     .addField("Kicked In", message.channel)
-    .addField("Time", mssage.createdAt)
+    .addField("Time", message.createdAt)
     .addField("Reason", kReason);
 
     let kickChannel = message.guild.channels.find(`name`, "incidents");
@@ -60,11 +60,11 @@ bot.on("message", async message =>{
     .setTitle("banned a user")
     .setDescription("This is a message to let people know someone is Banned :tada:")
     .setColor("#ff0000")
-    .addField("Banned User:", `${kUser} With ID: ${kUser.id}`)
+    .addField("Banned User:", `${bUser} With ID: ${bUser.id}`)
     .addField("banned By", `<@${message.author.username}> With ID: ${message.author.id}`)
     .addField("banned In", message.channel)
-    .addField("Time", mssage.createdAt)
-    .addField("Reason", kReason);
+    .addField("Time", message.createdAt)
+    .addField("Reason", bReason);
 
     let banChannel = message.guild.channels.find(`name`, "incidents");
     if(!banChannel) return message.reply("No incidents channel Found!")
