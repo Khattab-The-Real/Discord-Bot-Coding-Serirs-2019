@@ -69,7 +69,7 @@ bot.on("message", async message =>{
     let banChannel = message.guild.channels.find(`name`, "incidents");
     if(!banChannel) return message.reply("No incidents channel Found!")
 
-    message.guild.member(bUser).bick(bReason)
+    message.guild.member(bUser).ban(bReason)
     banChannel.send(banEmbed);
 
   }
